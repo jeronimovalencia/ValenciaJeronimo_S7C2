@@ -74,12 +74,11 @@ plt.title("C vs. Likelihood")
 plt.scatter(np.exp(-chi_good/200000),C_good)
 plt.subplot(223)
 plt.title("Histograma R")
-plt.hist(R_good)
+plt.hist(R_good,bins=20)
 plt.subplot(224)
 plt.title("Histograma C")
-plt.hist(C_good)
-
-plt.show()
+plt.hist(C_good,bins=20)
+plt.savefig("GraficasAdicionales.pdf")
 
 
 
