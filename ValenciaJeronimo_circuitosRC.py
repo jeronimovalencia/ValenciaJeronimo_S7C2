@@ -61,7 +61,25 @@ plt.scatter(time,data,s=5,color="cyan", label="Datos")
 plt.plot(time,q(time,R_best,C_best),color="black",label="R="+str(R_best)+"\nC="+str(C_best))
 plt.legend(loc="lower right")
 plt.savefig("CargaRC.pdf")
+plt.clf()
+plt.close()
 
+
+plt.figure(figsize=(10,10))
+plt.subplot(221)
+plt.title("R vs. Likelihood")
+plt.scatter(np.exp(-chi_good/200000),R_good)
+plt.subplot(222)
+plt.title("C vs. Likelihood")
+plt.scatter(np.exp(-chi_good/200000),C_good)
+plt.subplot(223)
+plt.title("Histograma R")
+plt.hist(R_good)
+plt.subplot(224)
+plt.title("Histograma C")
+plt.hist(C_good)
+
+plt.show()
 
 
 
